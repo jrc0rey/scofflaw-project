@@ -24,7 +24,7 @@ var addresses = []
 
 function Address(lat, lng, address, ticket_time){
 	this.lat = lat;
-	this.long = lng;
+	this.lng = lng;
 	this.address = address;
 	this.ticket_time = ticket_time
 }
@@ -38,7 +38,7 @@ $.ajax({
   success: function(address) {
   	console.log(address)
 
-  		for(var i = 151; i <= 300; i++){
+  		for(var i = 901; i <= 1000; i++){
 
   			getAddresses(address[i])
 

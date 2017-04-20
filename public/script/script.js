@@ -37,7 +37,7 @@ $('.signInFont').click(function(){
 //Google Maps code
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 40.7228809, lng: -73.9619602},
-          zoom: 12,
+          zoom: 10,
           minZoom: 10,
           // scrollwheel: false,
           disableDefaultUI: true,

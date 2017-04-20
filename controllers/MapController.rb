@@ -9,7 +9,7 @@ end
 post '/' do
 	@ticket = Ticket.new
 	@ticket.lat = params[:lat]
-	@ticket.long = params[:long]
+	@ticket.lng = params[:lng]
 	@ticket.ticket_time = params[:ticket_time]
 	@ticket.address = params[:address]
 	@ticket.save
