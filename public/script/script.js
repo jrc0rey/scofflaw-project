@@ -1,16 +1,20 @@
 // https://data.cityofnewyork.us/resource/qpyv-8eyi.json
 
-import mapboxgl from 'mapbox-gl';
-var MapboxGeocoder = require('mapbox-gl-geocoder');
 
-//Sign in & Register forms
+//Buttons
 $('.registerFont').css('cursor', 'pointer');
 $('.signInFont').css('cursor', 'pointer');
+$('.logout').css('cursor', 'pointer');
+$('.logout').css('cursor', 'pointer');
+$('.graph').css('cursor', 'pointer');
+$('.about').css('cursor', 'pointer');
 
 
+
+//Sign in & Register forms
 $('.registerFont').click(function(){
-	$('.registerFont').css('color', '#009DDC');
-	$('.signInFont').css('color', 'black');
+	$('.registerFont').css('color', '#CF6766');
+	$('.signInFont').css('color', '#1D2731');
 	$('.signInForm').css('display', 'none');
 	$('.registerForm').css('display', 'flex');
 	$('.regUser').val('');
@@ -19,61 +23,326 @@ $('.registerFont').click(function(){
 });
 
 $('.signInFont').click(function(){
-	$('.registerFont').css('color', 'black')
-	$('.signInFont').css('color', '#009DDC')
+	$('.registerFont').css('color', '#1D2731');
+	$('.signInFont').css('color', '#CF6766');
 	$('.signInForm').css('display', 'flex');
 	$('.registerForm').css('display', 'none');
 	$('.signUser').val('');
-	$('.passUser').val('')
+	$('.passUser').val('');
 });
 
-//Ajax call to New York open Data
-if (document.location.pathname == "/scofflaw/nycmap") {
+
+
+
+//Google Maps code
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 40.7228809, lng: -73.9619602},
+          zoom: 12,
+          minZoom: 10,
+          // scrollwheel: false,
+          disableDefaultUI: true,
+          styles: 
+          [
+    {
+        "featureType": "administrative",
+        "elementType": "all",
+        "stylers": [
+            {
+                "hue": "#0060ff"
+            },
+            {
+                "lightness": -100
+            },
+            {
+                "visibility": "off"
+            },
+            {
+                "saturation": "-77"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "#848ea4"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "hue": "#0060ff"
+            },
+            {
+                "saturation": "-70"
+            },
+            {
+                "lightness": "0"
+            },
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "hue": "#0050ff"
+            },
+            {
+                "saturation": "0"
+            },
+            {
+                "lightness": "0"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "hue": "#0060ff"
+            },
+            {
+                "saturation": "-80"
+            },
+            {
+                "lightness": "-90"
+            },
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "all",
+        "stylers": [
+            {
+                "hue": "#0060ff"
+            },
+            {
+                "saturation": "-80"
+            },
+            {
+                "lightness": "-70"
+            },
+            {
+                "visibility": "off"
+            },
+            {
+                "gamma": "1"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "hue": "#0060ff"
+            },
+            {
+                "saturation": "-85"
+            },
+            {
+                "lightness": "60"
+            },
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "hue": "#0060ff"
+            },
+            {
+                "saturation": "-70"
+            },
+            {
+                "lightness": "50"
+            },
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "elementType": "all",
+        "stylers": [
+            {
+                "hue": "#0060ff"
+            },
+            {
+                "saturation": "0"
+            },
+            {
+                "lightness": "-11"
+            },
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "visibility": "simplified"
+            },
+            {
+                "hue": "#0060ff"
+            },
+            {
+                "lightness": "0"
+            },
+            {
+                "saturation": "0"
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "hue": "#0060ff"
+            },
+            {
+                "lightness": -100
+            },
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "hue": "#0066ff"
+            },
+            {
+                "saturation": "0"
+            },
+            {
+                "lightness": 100
+            },
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "hue": "#000000"
+            },
+            {
+                "saturation": -100
+            },
+            {
+                "lightness": -100
+            },
+            {
+                "visibility": "off"
+            }
+        ]
+    }
+]
+});
+
+        
+
+//Google Marker Code
+
 $.ajax({
-  url: 'https://data.cityofnewyork.us/resource/qpyv-8eyi.json',
-  type: "GET",
-  dataType: 'json',
-  success: function(data) {
-    console.log(data[0].house_number + ' ' + data[0].street_name)
-    console.log(data[0].violation_time)
+		url: '/scofflaw/nycmap/tickets',
+		type: 'GET',
+		dataType: 'json',
+		success: function(data){
 
-  },
-  error: function(err) {
-  	console.log(err)
-  }
+			for(var i=0; i <= data.length; i++){
+				if(data[i] != undefined){
+					var infowindow = new google.maps.InfoWindow({
+    				content: data[i].address + "<br/>" + "Time issued:" + " " + data[i].ticket_time
+
+  					});
+					var obj = {lat: parseFloat(data[i].lat), lng: parseFloat(data[i].lng)};
+					var marker = new google.maps.Marker({
+						position: {lat: obj.lat, lng: obj.lng},
+						map: map,
+					})
+
+					// console.log(infowindow, ' infowindow')
+					addListenerToMarker(marker, infowindow)
+			
+				}
+			}
+		
+
+
+
+		},
+		error: function(err){
+			console.log(err)
+		}
 });
-}
 
-//MapBox Code 
-mapboxgl.accessToken = 'pk.eyJ1IjoianJjb3JleSIsImEiOiJjajFsaGxrOXowMDJxMzNsYnF6eDNjNnZiIn0.OsSjte46X_PSnJgkAP2Vfg';
 
-const map = new mapboxgl.Map({
-	accessToken: 'pk.eyJ1IjoianJjb3JleSIsImEiOiJjajFsaGxrOXowMDJxMzNsYnF6eDNjNnZiIn0.OsSjte46X_PSnJgkAP2Vfg',
-	style: 'mapbox://styles/mapbox/light-v9',
-    container: 'mapid',
-    center: [ -73.980065, 40.742329],
-  	zoom: 12,
+function addListenerToMarker(marker, infowindow){
+	marker.addListener('click', function() {
+				// console.log(this.marker, ' this is this.marker')
+			 infowindow.open(map, marker);
+		});
+
+};
+
+
+
+var searchBox = new google.maps.places.SearchBox(document.getElementById('searchInput'));
+
+
+
+$('.searchBtn').click(function(){
+	console.log('working')
 });
 
 
 
-// var map = new mapboxgl.Map({
-// accessToken: 'pk.eyJ1IjoianJjb3JleSIsImEiOiJjajFsaGxrOXowMDJxMzNsYnF6eDNjNnZiIn0.OsSjte46X_PSnJgkAP2Vfg',
-//   container: 'mapid',
-//   center: [-122.420679, 37.772537],
-//   zoom: 13,
-//   style: 'mapbox://styles/mapbox/light-v9',
-// });
-
-// var marker = new mapboxgl.Marker()
-//   .setLngLat([30.5, 50.5])
-//   .addTo(map);
 
 
 
-var geocoder = new MapboxGeocoder({
-	accessToken: 'pk.eyJ1IjoianJjb3JleSIsImEiOiJjajFsaGxrOXowMDJxMzNsYnF6eDNjNnZiIn0.OsSjte46X_PSnJgkAP2Vfg',
-});
-map.addControl(geocoder);
+
+
+
+
+
+
+
+
+
+
+
+
 
 

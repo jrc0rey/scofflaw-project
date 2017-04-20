@@ -1,26 +1,66 @@
+<!DOCTYPE html>
+<html>
+<body class=mapPage>
 
-
+<header>
 <div class="container">
 	<div class="row">
 		<div class="twelve columns">
 			<div class="search">
-			<div id="mapid"></div>
-			<footer><p class="foot">Built by Jason Corey &copy 2017</p></footer>
+			<input id="searchInput" type="text" name="nyc" placeholder="Input address here"/>
+			<button class="searchBtn">GO</button>
+			
+				<p class="graph">Data Visualization</p>
+				<p class="about">About</p>
+				<a href="/scofflaw/nycmap/logout"><p class="logout">Logout</p></a>
+			
 			</div>
 		</div>
 	</div>
-
-
-
-
-
-
-
-
-
-
-
 </div>
+</header>
+
+<div class="container">
+	<div class="row">
+		<div class="twelve columns">
+			<div id="map"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+<footer class="footer">
+<div class="container">
+<div class="row">
+		<div class="twelve columns">
+			<div class="footerCont">
+				<p class="foot">
+				Built by Jason Corey &copy 2017
+				</p>
+			</div>
+		</div>
+</div>
+</div>
+</footer>
+
+
+
+
+
+
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh3psezZRrUUocBJZeuSvL83nGvO2NibE&libraries=places"></script>
+
+    </body>
+</html>
+
+
 
 
 
