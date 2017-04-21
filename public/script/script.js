@@ -341,15 +341,16 @@ var searchBox = new google.maps.places.SearchBox(document.getElementById('search
 
 var input = document.getElementById('searchInput')
 
-$(".searchBtn").bind('click', function() {
+$('.searchBtn').bind('click', function(){
     google.maps.event.trigger(input, 'focus')
     google.maps.event.trigger(input, 'keydown', {
         keyCode: 13
     });
-    $(input).value('')
   });
 
-
+$('.searchBtn').click(function(){
+	$('#searchInput').val('')
+})
 
 
 
