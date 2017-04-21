@@ -19,7 +19,7 @@ post '/register' do
 	@user.save
 	@user.to_json
 	puts session
-	redirect '/scofflaw/nycmap'
+	redirect '/scofflaw/nyc-map'
 	end
 end
 
@@ -31,7 +31,7 @@ post '/login' do
 		session[:logged_in] = true
 		session[:username] = username
 		session[:user_id] = user.id
-		redirect '/scofflaw/nycmap'
+		redirect '/scofflaw/nyc-map'
 	else 
 		@message = "Incorrect username or password"
 		erb :register_login

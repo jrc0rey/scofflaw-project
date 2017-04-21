@@ -1,7 +1,5 @@
 class MapController < ApplicationController
 
-
-
 get '/' do
 	erb :mapPage
 end
@@ -25,7 +23,5 @@ get '/logout' do
 	session.destroy
 	redirect '/scofflaw/welcome'
 end
-
-
 
 end

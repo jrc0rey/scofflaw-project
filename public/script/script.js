@@ -276,7 +276,7 @@ $('.signInFont').click(function(){
 //Google Marker Code
 
 $.ajax({
-		url: '/scofflaw/nycmap/tickets',
+		url: '/scofflaw/nyc-map/tickets',
 		type: 'GET',
 		dataType: 'json',
 		success: function(data){
@@ -319,13 +319,35 @@ function addListenerToMarker(marker, infowindow){
 
 
 
+
+
+
 var searchBox = new google.maps.places.SearchBox(document.getElementById('searchInput'));
+	
+	google.maps.event.addListener(searchBox, 'places_changed', function(){
+		var places = searchBox.getPlaces();
+		var bounds = new google.maps.LatLngBounds();
+		var i, place;
 
+		for(var i=0; place=places[i]; i++){
+			bounds.extend(place.geometry.location)
+		}
 
+		map.fitBounds(bounds);
+		map.setZoom(15);
 
-$('.searchBtn').click(function(){
-	console.log('working')
-});
+	})
+// 	
+
+var input = document.getElementById('searchInput')
+
+$(".searchBtn").bind('click', function() {
+    google.maps.event.trigger(input, 'focus')
+    google.maps.event.trigger(input, 'keydown', {
+        keyCode: 13
+    });
+    $(input).value('')
+  });
 
 
 
