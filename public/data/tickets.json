@@ -1,0 +1,94 @@
+[{
+		"Time": "12AM-1AM",
+		"Tickets": 12
+	},
+	{
+		"Time": "1AM-2AM",
+		"Tickets": 30
+	},
+	{
+		"Time": "2AM-3AM",
+		"Tickets": 27
+	},
+	{
+		"Time": "3AM-4AM",
+		"Tickets": 13
+	},
+	{
+		"Time": "4AM-5AM",
+		"Tickets": 3
+	},
+	{
+		"Time": "5AM-6AM",
+		"Tickets": 7
+	},
+	{
+		"Time": "6AM-7AM",
+		"Tickets": 7
+	},
+	{
+		"Time": "7AM-8AM",
+		"Tickets": 28
+	},
+	{
+		"Time": "8AM-9AM",
+		"Tickets": 50
+	},
+	{
+		"Time": "9AM-10AM",
+		"Tickets": 35
+	},
+	{
+		"Time": "10AM-11AM",
+		"Tickets": 35
+	},
+	{
+		"Time": "11AM-12PM",
+		"Tickets": 52
+	},
+	{
+		"Time": "12PM-1PM",
+		"Tickets": 30
+	},
+	{
+		"Time": "1PM-2PM",
+		"Tickets": 24
+	},
+	{
+		"Time": "2PM-3PM",
+		"Tickets": 21
+	},
+	{
+		"Time": "3PM-4PM",
+		"Tickets": 17
+	},
+	{
+		"Time": "4PM-5PM",
+		"Tickets": 15
+	},
+	{
+		"Time": "5PM-6PM",
+		"Tickets": 22
+	},
+	{
+		"Time": "6PM-7PM",
+		"Tickets": 9
+	},
+	{
+		"Time": "7PM-8PM",
+		"Tickets": 17
+	},
+	{
+		"Time": "9PM-10PM",
+		"Tickets": 17
+	},
+	{
+		"Time": "10PM-11PM",
+		"Tickets": 12
+	},
+	{
+		"Time": "11PM-12AM",
+		"Tickets": 12
+	}
+
+]

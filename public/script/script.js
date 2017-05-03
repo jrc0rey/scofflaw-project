@@ -2,14 +2,7 @@
 
 
 //Buttons
-$('.registerFont').css('cursor', 'pointer');
-$('.signInFont').css('cursor', 'pointer');
-$('.logout').css('cursor', 'pointer');
-$('.logout').css('cursor', 'pointer');
-$('.graph').css('cursor', 'pointer');
-$('.about').css('cursor', 'pointer');
-
-
+$('.registerFont, .signInFont, .logout, .graph, .about').css('cursor', 'pointer');
 
 //Sign in & Register forms
 $('.registerFont').click(function(){

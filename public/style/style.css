@@ -210,3 +210,34 @@ a {
   color: #CF6766;
   margin: 0;
 }
+.dataPage {
+  width: 100%;
+  height: 40px;
+  background-color: #1D2731;
+}
+.dataHeader {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+  background-color: #1D2731;
+}
+.dataHeader .goBack {
+  font-family: 'Chivo', sans-serif;
+  font-weight: 300;
+  font-size: 10px;
+  color: #CF6766;
+  margin-bottom: 0px;
+  margin-right: 12px;
+}
+.dataContainer {
+  width: 100%;
+  height: 100vh;
+  background-color: red;
+}
+.dataContainer .dataText {
+  font-family: 'Chivo', sans-serif;
+  font-weight: 300;
+  font-size: 25px;
+  color: black;
+}

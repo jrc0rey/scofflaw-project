@@ -6,6 +6,7 @@ end
 
 get '/times' do
 	@ticket = Ticket.all
+	@ticket.to_json
 end
 
 
