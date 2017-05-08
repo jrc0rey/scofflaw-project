@@ -1,7 +1,12 @@
 class DataMapController < ApplicationController
 
+
 get '/' do
-	erb :data
+	if session[:logged_in] 
+		erb :data
+	else 
+		redirect '/scofflaw/welcome'
+	end
 end
 
 get '/times' do

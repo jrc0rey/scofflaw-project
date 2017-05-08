@@ -2,7 +2,7 @@
 
 
 //Buttons
-$('.registerFont, .signInFont, .logout, .graph, .about').css('cursor', 'pointer');
+$('.registerFont, .signInFont, .logout, .graph, .about, .x').css('cursor', 'pointer');
 
 //Sign in & Register forms
 $('.registerFont').click(function(){
@@ -23,6 +23,15 @@ $('.signInFont').click(function(){
 	$('.signUser').val('');
 	$('.passUser').val('');
 });
+
+//Modal
+$('.about').click(function(){
+    $('.modal').fadeIn('fast').css('display','flex')
+})
+
+$('.x').click(function(){
+    $('.modal').css('display', 'none')
+})
 
 
 
@@ -277,7 +286,7 @@ $.ajax({
 			for(var i=0; i <= data.length; i++){
 				if(data[i] != undefined){
 					var infowindow = new google.maps.InfoWindow({
-    				content: data[i].address + "<br/>" + "Time issued:" + " " + data[i].ticket_time
+    				content: data[i].address + "<br/>" + "Time issued:" + " " + data[i].ticket_time + 'M'
 
   					});
 					var obj = {lat: parseFloat(data[i].lat), lng: parseFloat(data[i].lng)};

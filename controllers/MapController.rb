@@ -1,7 +1,12 @@
 class MapController < ApplicationController
 
+
 get '/' do
-	erb :mapPage
+	if session[:logged_in] 
+		erb :mapPage
+	else 
+		redirect '/scofflaw/welcome'
+	end
 end
 
 post '/' do
