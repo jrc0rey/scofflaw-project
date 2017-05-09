@@ -18,7 +18,7 @@ post '/register' do
 	@user.password = params[:regPassword]
 	@user.save
 	@user.to_json
-	puts session
+	session[:logged_in] = true
 	redirect '/scofflaw/nyc-map'
 	end
 end

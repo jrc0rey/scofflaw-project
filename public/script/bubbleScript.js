@@ -1,4 +1,4 @@
-console.log('working')
+console.log('good to go')
 
 var width = 550;
 var height = 550;
@@ -9,9 +9,9 @@ d3.json('/data/tickets.json', function(error,data){
 		.attr('height', height)
 		.attr('width', width)
 		.append('g')
-		.attr('transform', 'translate('+ width / 2 + ',' + height / 2.5 + ')')
+		.attr('transform', 'translate('+ width / 2 + ',' + height / 2.3 + ')');
 
-	var radiusScale = d3.scaleSqrt().domain([0,150]).range([20,70])
+	var radiusScale = d3.scaleSqrt().domain([0,150]).range([20,70]);
 
 	
 	var simulation = d3.forceSimulation()
@@ -19,7 +19,7 @@ d3.json('/data/tickets.json', function(error,data){
 		.force('y', d3.forceY(0).strength(0.05))
 		.force('collide', d3.forceCollide(function(d){
 			return radiusScale(d.Tickets) + .5;
-		}))
+		}));
 
 
 
@@ -37,7 +37,7 @@ d3.json('/data/tickets.json', function(error,data){
 			else{
 				return '#CF6766'
 			}
-		})
+		});
 
 
 	var labels = svg.selectAll('.time')
@@ -57,12 +57,11 @@ d3.json('/data/tickets.json', function(error,data){
 			})
 			.text(function(d){
 				return d.Time
-			})
+			});
 
 	
 
-	simulation.nodes(data)
-		.on('tick', ticked)
+	simulation.nodes(data).on('tick', ticked);
 
 	function ticked(){
 		circles.attr('cx', function(d){
@@ -70,15 +69,15 @@ d3.json('/data/tickets.json', function(error,data){
 		})
 		.attr('cy', function(d){
 			return d.y
-		})
+		});
 		
 		labels
-  		.attr("x", function(d) {
+  		.attr('x', function(d) {
     		return d.x ;
   		})
-  		.attr("y", function(d) {
+  		.attr('y', function(d) {
     		return d.y ;
-  		})
+  		});
 	}
 });
 	
