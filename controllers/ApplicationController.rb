@@ -29,6 +29,10 @@ set :public_dir, File.expand_path('../../public',__FILE__)
 
 set :session_secret, 'newman'
 
+get '/' do
+	erb :register_login
+end
+
 
 not_found do
 	erb :not_found
