@@ -2,7 +2,7 @@
 
 
 //Buttons
-$('.registerFont, .signInFont, .logout, .graph, .about, .x').css('cursor', 'pointer');
+$('.registerFont, .signInFont, .logout, .graph, .about, .x, .goBackButton').css('cursor', 'pointer');
 
 //Sign in & Register forms
 $('.registerFont').click(function(){
@@ -32,6 +32,7 @@ $('.about').click(function(){
 $('.x').click(function(){
     $('.modal').css('display', 'none')
 })
+
 
 
 
